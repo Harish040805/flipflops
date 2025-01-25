@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="https://static.vecteezy.com/system/resources/previews/018/794/378/non_2x/chip-processor-logo-vector.jpg">
+    <title>JK Flip-Flop Simulator</title>
+<head>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7; 
+    margin: 20px; 
+}
+.container {
+	background: white;
+    width: 50%;
+	height: 50%;
+    margin: 0px auto;
+}
+.flipflop-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.block {
+    width: 220px;
+    height: 220px;
+    border: 1px solid #ddd;
+    background-color: #52b640;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#clk-btn {
+  padding: 5px;
+  background: #6bbbed;
+  clip-path: ellipse(67% 100% at 92% 50%);
+}
+#reset-btn {
+    padding: 5px;
+    margin-top: 100px;
+	border-radius: 50%;
+	background-color: red;	
+}
+table {
+    border-collapse: collapse;
+    width: 50%;
+    margin: 40px auto;
+}
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+th {
+    background-color: #f0f0f0;
+}
+.input-output-container {
+  display: flex;
+  align-items: center;
+}
+#jk-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  height: 220px;
+  border: 1px solid #ddd;
+  background-color: #52b640;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+#jk-block span {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+#j-input, #k-input {
+  width: 40px;
+  height: 30px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+  text-align: center;
+  margin-right: 10px; 
+}
+#jk-output {
+  font-size: 16px;
+  border: 1px solid #ddd;
+  padding: 5px;
+  width: 30px;
+  text-align: center;
+  border-radius: 5px;
+}
+	</style>
+</head>
+<body>
+<h1>JK Flip-Flop Simulator</h1>
+    <div class="container">
+        <div class="flipflop-block">
+            <div id="clk-block">
+			<br><br><br><br>
+                <span id="clk-output">0</span>
+                <button id="clk-btn">&nbsp &nbsp CLK</button>
+            </div>
+<div class="block" id="jk-block">
+			<br>
+  <span style="color:#fff; text-shadow: 2px 2px solid white; "><b>JK</b></span>
+  <div class="input-output-container">
+    <input type="number" id="j-input" min="0" max="1" placeholder="J">
+    <input type="number" id="k-input" min="0" max="1" placeholder="K">
+	<span style="color:#fff;"><b>Set</b> </span> &nbsp &nbsp 
+    <span id="jk-output" style="color:#fff;"> 0</span>
+	
+	    <center>
+		<button id="reset-btn"></button>
+		<b style="color:white;">R</b>
+		</center>
+  </div>
+</div>
+  <div>
+  <br><br><br>
+  <span>-------- Q</span>
+  <span id="q-output">0</span>
+  <br><br><br>
+  <span>-------- Q'</span>
+  <span id="qbar-output">1</span>
+  </div>
+        </div>
+	</div>
+<h1>JK Flip-Flop Diagram</h1>
+	<center><img src="https://media.geeksforgeeks.org/wp-content/uploads/20230705113448/JK-Flip-Flop1.png"></center>
+<h1>JK Flip-Flop Truth Table</h1>
+<table>
+  <tr>
+    <th>CLK</th>
+    <th>J</th>
+    <th>K</th>
+    <th>Q</th>
+    <th>Q̄</th>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>X</td>
+    <td>X</td>
+    <td>Q̄</td>
+    <td>Q</td>
+  </tr>
+  <tr>
+    <td>↑</td>
+    <td>0</td>
+    <td>0</td>
+    <td>Q</td>
+    <td>Q̄</td>
+  </tr>
+  <tr>
+    <td>↑</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>↑</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>↑</td>
+    <td>1</td>
+    <td>1</td>
+    <td>Q̄</td>
+    <td>Q</td>
+  </tr>
+</table>
+    <script>
+let clk = 0;
+let prevClk = 0;
+let j = 0;
+let k = 0;
+let q = 0;
+let qbar = 1;
+
+const clkBtn = document.getElementById('clk-btn');
+const jInput = document.getElementById('j-input'); 
+const kInput = document.getElementById('k-input'); 
+const clkOutput = document.getElementById('clk-output');
+const qOutput = document.getElementById('q-output');
+const qbarOutput = document.getElementById('qbar-output');
+const resetBtn = document.getElementById('reset-btn');
+
+jInput.placeholder = 'J';
+kInput.placeholder = 'K';
+
+clkBtn.addEventListener('click', () => {
+    clk = 1 - clk; 
+    clkOutput.innerText = clk;
+
+    if (clk === 1 && prevClk === 0) { 
+        j = parseInt(jInput.value);
+        k = parseInt(kInput.value);
+
+        if (j === 0 && k === 0) {
+        
+        } else if (j === 0 && k === 1) { 
+            q = 0;
+            qbar = 1;
+        } else if (j === 1 && k === 0) { 
+            q = 1;
+            qbar = 0;
+        } else if (j === 1 && k === 1) { 
+            q = 1 - q;
+            qbar = 1 - q;
+        }
+
+        qOutput.innerText = q;
+        qbarOutput.innerText = qbar;
+    }
+
+    prevClk = clk;
+});
+
+resetBtn.addEventListener('click', () => {
+    clk = 0;
+    prevClk = 0;
+    j = 0;
+    k = 0;
+    q = 0;
+    qbar = 1;
+    clkOutput.innerText = clk;
+    qOutput.innerText = q;
+    qbarOutput.innerText = qbar;
+    jInput.value = 0;
+    kInput.value = 0;
+});
+	</script>
+</body>
+</html>

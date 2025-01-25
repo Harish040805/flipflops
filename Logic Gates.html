@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="https://static.vecteezy.com/system/resources/previews/018/794/378/non_2x/chip-processor-logo-vector.jpg">
+    <title>Logic Gates Simulator</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 20px;
+}
+.gate-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.gate-block {
+    width: 220px;
+    height: 220px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	font-size: 12px;
+	font-weight: bold;
+	margin-left: 40%;
+}
+.and-gate {
+    background-color: #964B00;
+	clip-path: polygon(0 0, 160px 0, 280px 90px, 280px 160px,170px 250px, 0 250px, 0 200px, 0 80px);
+}
+.or-gate {
+    background-color: gold; 
+	clip-path: polygon(0 0, 160px 30px, 260px 110px, 260px 130px,150px 230px, 0 250px, 35px 200px, 40px 80px);
+}
+.not-gate {
+    background-color: #32CD32; 
+	clip-path: polygon(80px 213px, 80px 0, 260px 100px, 100px 200px);
+}
+.output {
+    font-size: 16px;
+    margin-left: 20px;
+}
+input[type="checkbox"] {
+    margin: 10px;
+}
+table {
+  border-collapse: collapse;
+  width: 50%;
+  margin: 40px auto;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+th {
+  background-color: #f0f0f0;
+}
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+caption {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.nand-gate {
+	color: #fff;
+    background-color: #ff0000;
+	clip-path: polygon(0 0, 160px 0, 280px 90px, 280px 160px,170px 250px, 0 250px, 0 200px, 0 80px);
+}
+.nor-gate {
+    background-color: orange; 
+	clip-path: polygon(0 0, 160px 30px, 260px 110px, 260px 130px,150px 230px, 0 250px, 35px 200px, 40px 80px);
+}
+.xor-gate {
+    background-color: lime; 
+	clip-path: polygon(0 0, 160px 30px, 260px 110px, 260px 130px,150px 230px, 0 250px, 35px 200px, 40px 80px);
+}
+.xnor-gate {
+    color: #fff;
+    background-color: firebrick;
+	clip-path: polygon(0 0, 160px 30px, 260px 110px, 260px 130px,150px 230px, 0 250px, 35px 200px, 40px 80px);
+}
+	</style>
+</head>
+<body>
+    <h1>Logic Gates Simulator</h1>
+	
+	<br><br>
+	<center>
+	<img src="https://www.microcontrollertips.com/wp-content/uploads/2022/05/What-are-basic-logic-gates-figure-1.jpg" style="width: 50%; height:50%;">
+	</center>
+	<br><br>
+	<h1>AND Gate Simulator </h1>
+<div class="gate-container">
+    <div class="gate-block and-gate">
+        <h2 style="color:white;">AND Gate</h2>
+        <input type="checkbox" id="and-input-1">
+        <input type="checkbox" id="and-input-2">
+    </div>
+    -------- Y <span id="and-output" class="output">0</span>
+</div>
+	<br><br>
+	<h1>AND Gate Truth Table </h1>
+<center>
+<table>
+  <thead>
+    <tr>
+      <th>Input A</th>
+      <th>Input B</th>
+      <th>Output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</center>
+	<br><br>
+	<h1>OR Gate</h1>
+<div class="gate-container">
+    <div class="gate-block or-gate">
+        <h2>OR Gate</h2>
+        <input type="checkbox" id="or-input-1">
+        <input type="checkbox" id="or-input-2">
+    </div>
+    -------- Y <span id="or-output" class="output">0</span>
+</div>
+	<br><br>
+	<h1>OR Gate Truth Table </h1>
+<center>
+<table>
+  <thead>
+    <tr>
+      <th>Input A</th>
+      <th>Input B</th>
+      <th>Output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</center>
+	<h1>NOT Gate</h1>
+<div class="gate-container">
+    <div class="gate-block not-gate">
+        <h2>NOT Gate</h2>
+        <input type="checkbox" id="not-input"> 
+		<br><br>
+    </div>
+    -------- Y <span id="not-output" class="output">1</span>
+</div>
+	<br><br>
+	<h1>NOT Gate Truth Table </h1>
+<center>
+<table>
+  <thead>
+    <tr>
+      <th>Input A</th>
+      <th>Output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+	    <td>1</td>
+    </tr>
+    <tr>
+      <td>1</td>
+	    <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</center>
+<h1>NAND Gate</h1>
+<div class="gate-container">
+    <div class="gate-block nand-gate">
+        <h2>NAND Gate</h2>
+        <input type="checkbox" id="nand-input-1">
+        <input type="checkbox" id="nand-input-2">
+    </div>
+    -------- Y <span id="nand-output" class="output">1</span>
+</div>
+<br><br>
+<h1>NAND Gate Truth Table </h1>
+<center>
+<table>
+  <thead>
+    <tr>
+      <th>Input A</th>
+      <th>Input B</th>
+      <th>Output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</center>
+
+<h1>NOR Gate</h1>
+<div class="gate-container">
+    <div class="gate-block nor-gate">
+        <h2>NOR Gate</h2>
+        <input type="checkbox" id="nor-input-1">
+        <input type="checkbox" id="nor-input-2">
+    </div>
+    -------- Y <span id="nor-output" class="output">1</span>
+</div>
+<br><br>
+<h1>NOR Gate Truth Table </h1>
+<center>
+<table>
+  <thead>
+    <tr>
+      <th>Input A</th>
+      <th>Input B</th>
+      <th>Output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</center>
+
+<h1>XOR Gate</h1>
+<div class="gate-container">
+    <div class="gate-block xor-gate">
+        <h2>XOR Gate</h2>
+        <input type="checkbox" id="xor-input-1">
+        <input type="checkbox" id="xor-input-2">
+    </div>
+    -------- Y <span id="xor-output" class="output">0</span>
+</div>
+<br><br>
+<h1>XOR Gate Truth Table </h1>
+<center>
+<table>
+  <thead>
+    <tr>
+      <th>Input A</th>
+      <th>Input B</th>
+      <th>Output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</center>
+
+<h1>XNOR Gate</h1>
+<div class="gate-container">
+    <div class="gate-block xnor-gate">
+        <h2>XNOR Gate</h2>
+        <input type="checkbox" id="xnor-input-1">
+        <input type="checkbox" id="xnor-input-2">
+    </div>
+    -------- Y <span id="xnor-output" class="output">1</span>
+</div>
+<br><br>
+<h1>XNOR Gate Truth Table </h1>
+<center>
+<table>
+  <thead>
+    <tr>
+      <th>Input A</th>
+	  <th>Input B</th>
+      <th>Output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</center>
+    <script>
+const andInput1 = document.getElementById('and-input-1');
+const andInput2 = document.getElementById('and-input-2');
+const andOutput = document.getElementById('and-output');
+
+andInput1.addEventListener('change', updateAndOutput);
+andInput2.addEventListener('change', updateAndOutput);
+
+function updateAndOutput() {
+    const andResult = andInput1.checked && andInput2.checked;
+    andOutput.innerText = andResult ? '1' : '0';
+}
+
+const orInput1 = document.getElementById('or-input-1');
+const orInput2 = document.getElementById('or-input-2');
+const orOutput = document.getElementById('or-output');
+
+orInput1.addEventListener('change', updateOrOutput);
+orInput2.addEventListener('change', updateOrOutput);
+
+function updateOrOutput() {
+    const orResult = orInput1.checked || orInput2.checked;
+    orOutput.innerText = orResult ? '1' : '0';
+}
+
+const notInput = document.getElementById('not-input');
+const notOutput = document.getElementById('not-output');
+
+notInput.addEventListener('change', updateNotOutput);
+
+function updateNotOutput() {
+    const notResult = !notInput.checked;
+    notOutput.innerText = notResult ? '1' : '0';
+}
+
+const nandInput1 = document.getElementById('nand-input-1');
+const nandInput2 = document.getElementById('nand-input-2');
+const nandOutput = document.getElementById('nand-output');
+
+nandInput1.addEventListener('change', updateNandOutput);
+nandInput2.addEventListener('change', updateNandOutput);
+
+function updateNandOutput() {
+    const nandResult = !(nandInput1.checked && nandInput2.checked);
+    nandOutput.innerText = nandResult ? '1' : '0';
+}
+
+const norInput1 = document.getElementById('nor-input-1');
+const norInput2 = document.getElementById('nor-input-2');
+const norOutput = document.getElementById('nor-output');
+
+norInput1.addEventListener('change', updateNorOutput);
+norInput2.addEventListener('change', updateNorOutput);
+
+function updateNorOutput() {
+    const norResult = !(norInput1.checked || norInput2.checked);
+    norOutput.innerText = norResult ? '1' : '0';
+}
+
+const xorInput1 = document.getElementById('xor-input-1');
+const xorInput2 = document.getElementById('xor-input-2');
+const xorOutput = document.getElementById('xor-output');
+
+xorInput1.addEventListener('change', updateXorOutput);
+xorInput2.addEventListener('change', updateXorOutput);
+
+function updateXorOutput() {
+    const xorResult = (xorInput1.checked && !xorInput2.checked) || (!xorInput1.checked && xorInput2.checked);
+    xorOutput.innerText = xorResult ? '1' : '0';
+}
+
+const xnorInput1 = document.getElementById('xnor-input-1');
+const xnorInput2 = document.getElementById('xnor-input-2');
+const xnorOutput = document.getElementById('xnor-output');
+
+xnorInput1.addEventListener('change', updateXnorOutput);
+xnorInput2.addEventListener('change', updateXnorOutput);
+
+function updateXnorOutput() {
+    const xnorResult = (xnorInput1.checked && xnorInput2.checked) || (!xnorInput1.checked && !xnorInput2.checked);
+    xnorOutput.innerText = xnorResult ? '1' : '0';
+}
+	</script>
+</body>
+</html>

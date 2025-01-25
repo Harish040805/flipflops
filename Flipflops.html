@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="https://static.vecteezy.com/system/resources/previews/018/794/378/non_2x/chip-processor-logo-vector.jpg">
+    <title>FlipFlops</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHlzjpKhso3UK6JmTtspbOTieRAmu1ioiw1w&s');
+	background-image: linear-gradient(to right, blue, pink);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    text-align: center;
+    margin-top: 7vh;
+    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+    padding: 50px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+h1,h3 {
+    color: #ffffff;
+    text-shadow: 2px 2px 5px #000000;
+    margin-bottom: 20px;
+}
+h1{
+    font-size: 38px;
+}
+h3{
+    font-size: 30px;
+}
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.btn {
+    text-decoration: none;
+    color: #fff;
+    background-color: #0f7cbf;
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.btn:hover {
+    background-color: #14689c;
+}
+.btn:active {
+    transform: scale(0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 760px) {
+    .container {
+        margin-top: 20vh;
+        padding: 15px 0;
+    }
+    .button-container {
+        flex-direction: column;
+    }
+    .btn {
+        margin-bottom: 15px;
+    }
+}
+.DPSD-image {
+    width: 300px;
+    height: 200px;
+    margin: 20px auto;
+    border-radius: 50%; 
+}
+	</style>
+</head>
+<body>
+    <div class="container">
+        <h1>= FlipFlops =</h1>
+		<img src="C:\Users\HP\OneDrive\Desktop\Perplexity AI\DPSD Website.png" alt="Circuit" class="DPSD-image">
+		<h3>- Welcome -</h3>
+        <div class="button-container">
+            <a href="C:\Users\HP\OneDrive\Desktop\Flipflops\D Flipflop.html" class="btn">D Flip Flop</a>
+            <a href="C:\Users\HP\OneDrive\Desktop\Flipflops\JK Flipflop.html" class="btn">JK Flip Flop</a>
+			<a href="C:\Users\HP\OneDrive\Desktop\Flipflops\SR%20Flipflop.html" class="btn">SR Flip Flop</a>
+			<a href="C:\Users\HP\OneDrive\Desktop\Flipflops\T Flipflop.html" class="btn">T Flip Flop</a>
+			<a href="C:\Users\HP\OneDrive\Desktop\Flipflops\MS Flipflop.html" class="btn">MS Flip Flop</a>
+			<a href="C:\Users\HP\OneDrive\Desktop\Flipflops\Logic Gates.html" class="btn">Logic Gates</a>
+        </div>
+    </div>
+    <br><br><br><br>
+    <script>
+const buttons = document.querySelectorAll('.btn');
+
+buttons.forEach(button => {
+    button.addEventListener('mouseover', () => {
+        button.style.transform = 'scale(1.1)';
+    });
+
+    button.addEventListener('mouseout', () => {
+        button.style.transform = 'scale(1)';
+    });
+});
+	</script>
+</body>
+</html>
