@@ -11,6 +11,32 @@ body {
     background-color: #f7f7f7;
     margin: 20px;
 }
+	    .accordion {
+  width: 80%;
+  margin: 40px auto;
+}
+
+.accordion-item {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.accordion-button {
+  width: 100%;
+  padding: 15px;
+  background-color: #f0f0f0;
+  border: none;
+  cursor: pointer;
+}
+
+.accordion-content {
+  padding: 15px;
+  display: none;
+}
+
+.accordion-content.show {
+  display: block;
+}
 .gate-container {
     display: flex;
     align-items: center;
@@ -101,306 +127,362 @@ caption {
 	<img src="https://www.microcontrollertips.com/wp-content/uploads/2022/05/What-are-basic-logic-gates-figure-1.jpg" style="width: 50%; height:50%;">
 	</center>
 	<br><br>
-	<h1>AND Gate Simulator </h1>
-<div class="gate-container">
-    <div class="gate-block and-gate">
-        <h2 style="color:white;">AND Gate</h2>
-        <input type="checkbox" id="and-input-1">
-        <input type="checkbox" id="and-input-2">
+	<!-- Accordion Container -->
+<div class="accordion">
+  <!-- AND Gate Accordion -->
+  <div class="accordion-item">
+    <button class="accordion-button">AND Gate</button>
+    <div class="accordion-content">
+      <h1>AND Gate Simulator </h1>
+      <div class="gate-container">
+        <div class="gate-block and-gate">
+          <h2 style="color:white;">AND Gate</h2>
+          <input type="checkbox" id="and-input-1">
+          <input type="checkbox" id="and-input-2">
+        </div>
+        -------- Y <span id="and-output" class="output">0</span>
+      </div>
+      <br><br>
+      <h1>AND Gate Truth Table </h1>
+      <center>
+        <table>
+          <thead>
+            <tr>
+              <th>Input A</th>
+              <th>Input B</th>
+              <th>Output</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
     </div>
-    -------- Y <span id="and-output" class="output">0</span>
-</div>
-	<br><br>
-	<h1>AND Gate Truth Table </h1>
-<center>
-<table>
-  <thead>
-    <tr>
-      <th>Input A</th>
-      <th>Input B</th>
-      <th>Output</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</center>
-	<br><br>
-	<h1>OR Gate</h1>
-<div class="gate-container">
-    <div class="gate-block or-gate">
-        <h2>OR Gate</h2>
-        <input type="checkbox" id="or-input-1">
-        <input type="checkbox" id="or-input-2">
-    </div>
-    -------- Y <span id="or-output" class="output">0</span>
-</div>
-	<br><br>
-	<h1>OR Gate Truth Table </h1>
-<center>
-<table>
-  <thead>
-    <tr>
-      <th>Input A</th>
-      <th>Input B</th>
-      <th>Output</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</center>
-	<h1>NOT Gate</h1>
-<div class="gate-container">
-    <div class="gate-block not-gate">
-        <h2>NOT Gate</h2>
-        <input type="checkbox" id="not-input"> 
-		<br><br>
-    </div>
-    -------- Y <span id="not-output" class="output">1</span>
-</div>
-	<br><br>
-	<h1>NOT Gate Truth Table </h1>
-<center>
-<table>
-  <thead>
-    <tr>
-      <th>Input A</th>
-      <th>Output</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-	    <td>1</td>
-    </tr>
-    <tr>
-      <td>1</td>
-	    <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</center>
-<h1>NAND Gate</h1>
-<div class="gate-container">
-    <div class="gate-block nand-gate">
-        <h2>NAND Gate</h2>
-        <input type="checkbox" id="nand-input-1">
-        <input type="checkbox" id="nand-input-2">
-    </div>
-    -------- Y <span id="nand-output" class="output">1</span>
-</div>
-<br><br>
-<h1>NAND Gate Truth Table </h1>
-<center>
-<table>
-  <thead>
-    <tr>
-      <th>Input A</th>
-      <th>Input B</th>
-      <th>Output</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</center>
+  </div>
 
-<h1>NOR Gate</h1>
-<div class="gate-container">
-    <div class="gate-block nor-gate">
-        <h2>NOR Gate</h2>
-        <input type="checkbox" id="nor-input-1">
-        <input type="checkbox" id="nor-input-2">
+  <!-- OR Gate Accordion -->
+  <div class="accordion-item">
+    <button class="accordion-button">OR Gate</button>
+    <div class="accordion-content">
+      <h1>OR Gate</h1>
+      <div class="gate-container">
+        <div class="gate-block or-gate">
+          <h2>OR Gate</h2>
+          <input type="checkbox" id="or-input-1">
+          <input type="checkbox" id="or-input-2">
+        </div>
+        -------- Y <span id="or-output" class="output">0</span>
+      </div>
+      <br><br>
+      <h1>OR Gate Truth Table </h1>
+      <center>
+        <table>
+          <thead>
+            <tr>
+              <th>Input A</th>
+              <th>Input B</th>
+              <th>Output</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>0</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
     </div>
-    -------- Y <span id="nor-output" class="output">1</span>
-</div>
-<br><br>
-<h1>NOR Gate Truth Table </h1>
-<center>
-<table>
-  <thead>
-    <tr>
-      <th>Input A</th>
-      <th>Input B</th>
-      <th>Output</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</center>
+  </div>
 
-<h1>XOR Gate</h1>
-<div class="gate-container">
-    <div class="gate-block xor-gate">
-        <h2>XOR Gate</h2>
-        <input type="checkbox" id="xor-input-1">
-        <input type="checkbox" id="xor-input-2">
+  <!-- NOT Gate Accordion -->
+  <div class="accordion-item">
+    <button class="accordion-button">NOT Gate</button>
+    <div class="accordion-content">
+      <h1>NOT Gate</h1>
+      <div class="gate-container">
+        <div class="gate-block not-gate">
+          <h2>NOT Gate</h2>
+          <input type="checkbox" id="not-input"> 
+          <br><br>
+        </div>
+        -------- Y <span id="not-output" class="output">1</span>
+      </div>
+      <br><br>
+      <h1>NOT Gate Truth Table </h1>
+      <center>
+        <table>
+          <thead>
+            <tr>
+              <th>Input A</th>
+              <th>Output</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>0</td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
     </div>
-    -------- Y <span id="xor-output" class="output">0</span>
-</div>
-<br><br>
-<h1>XOR Gate Truth Table </h1>
-<center>
-<table>
-  <thead>
-    <tr>
-      <th>Input A</th>
-      <th>Input B</th>
-      <th>Output</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</center>
+  </div>
 
-<h1>XNOR Gate</h1>
-<div class="gate-container">
-    <div class="gate-block xnor-gate">
-        <h2>XNOR Gate</h2>
-        <input type="checkbox" id="xnor-input-1">
-        <input type="checkbox" id="xnor-input-2">
+  <!-- NAND Gate Accordion -->
+  <div class="accordion-item">
+    <button class="accordion-button">NAND Gate</button>
+    <div class="accordion-content">
+      <h1>NAND Gate</h1>
+      <div class="gate-container">
+        <div class="gate-block nand-gate">
+          <h2>NAND Gate</h2>
+          <input type="checkbox" id="nand-input-1">
+          <input type="checkbox" id="nand-input-2">
+        </div>
+        -------- Y <span id="nand-output" class="output">1</span>
+      </div>
+      <br><br>
+      <h1>NAND Gate Truth Table </h1>
+      <center>
+        <table>
+          <thead>
+            <tr>
+              <th>Input A</th>
+              <th>Input B</th>
+              <th>Output</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>0</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>1</td>
+              <td>0</td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
     </div>
-    -------- Y <span id="xnor-output" class="output">1</span>
+  </div>
+
+  <!-- NOR Gate Accordion -->
+  <div class="accordion-item">
+    <button class="accordion-button">NOR Gate</button>
+    <div class="accordion-content">
+      <h1>NOR Gate</h1>
+      <div class="gate-container">
+        <div class="gate-block nor-gate">
+          <h2>NOR Gate</h2>
+          <input type="checkbox" id="nor-input-1">
+          <input type="checkbox" id="nor-input-2">
+        </div>
+        -------- Y <span id="nor-output" class="output">1</span>
+      </div>
+      <br><br>
+      <h1>NOR Gate Truth Table </h1>
+      <center>
+        <table>
+          <thead>
+            <tr>
+              <th>Input A</th>
+              <th>Input B</th>
+              <th>Output</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>1</td>
+              <td>0</td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+    </div>
+  </div>
+
+  <!-- XOR Gate Accordion -->
+  <div class="accordion-item">
+    <button class="accordion-button">XOR Gate</button>
+    <div class="accordion-content">
+      <h1>XOR Gate</h1>
+      <div class="gate-container">
+        <div class="gate-block xor-gate">
+          <h2>XOR Gate</h2>
+          <input type="checkbox" id="xor-input-1">
+          <input type="checkbox" id="xor-input-2">
+        </div>
+        -------- Y <span id="xor-output" class="output">0</span>
+      </div>
+      <br><br>
+      <h1>XOR Gate Truth Table </h1>
+      <center>
+        <table>
+          <thead>
+            <tr>
+              <th>Input A</th>
+              <th>Input B</th>
+              <th>Output</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>0</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>1</td>
+              <td>0</td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+    </div>
+  </div>
+
+  <!-- XNOR Gate Accordion -->
+  <div class="accordion-item">
+    <button class="accordion-button">XNOR Gate</button>
+    <div class="accordion-content">
+      <h1>XNOR Gate</h1>
+      <div class="gate-container">
+        <div class="gate-block xnor-gate">
+          <h2>XNOR Gate</h2>
+          <input type="checkbox" id="xnor-input-1">
+          <input type="checkbox" id="xnor-input-2">
+        </div>
+        -------- Y <span id="xnor-output" class="output">1</span>
+      </div>
+      <br><br>
+      <h1>XNOR Gate Truth Table </h1>
+      <center>
+        <table>
+          <thead>
+            <tr>
+              <th>Input A</th>
+              <th>Input B</th>
+              <th>Output</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+    </div>
+  </div>
 </div>
-<br><br>
-<h1>XNOR Gate Truth Table </h1>
-<center>
-<table>
-  <thead>
-    <tr>
-      <th>Input A</th>
-	  <th>Input B</th>
-      <th>Output</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</center>
     <script>
+const accordionButtons = document.querySelectorAll('.accordion-button');
+
+accordionButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const content = button.nextElementSibling;
+    content.classList.toggle('show');
+  });
+});
+	    
 const andInput1 = document.getElementById('and-input-1');
 const andInput2 = document.getElementById('and-input-2');
 const andOutput = document.getElementById('and-output');
