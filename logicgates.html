@@ -22,13 +22,24 @@ body {
 }
 
 .accordion-button {
-  width: 100%;
-  padding: 15px;
-  background-color: #f0f0f0;
-  border: none;
-  cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    background-color: #0f7cbf;
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
-
+.accordion-button:hover {
+    background-color: #14689c;
+}
+.accordion-button:active {
+    transform: scale(0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 .accordion-content {
   padding: 15px;
   display: none;
