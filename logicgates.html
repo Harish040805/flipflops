@@ -11,44 +11,40 @@ body {
     background-color: #f7f7f7;
     margin: 20px;
 }
-	    .accordion {
+.accordion {
   width: 80%;
   margin: 40px auto;
 }
-
 .accordion-item {
   margin-bottom: 10px;
-	display: grid;
-  place-items: center;
+  width: 100%;
+  background-color: #f0f0f0;
 }
-
 .accordion-button {
-    text-decoration: none;
-    color: #fff;
-    background-color: #0f7cbf;
-    padding: 15px 30px;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	
-}
-.accordion-button:hover {
-    background-color: #14689c;
-}
-.accordion-button:active {
-    transform: scale(0.9);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  padding: 15px;
+  background-color: #0f7cbf;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  text-align: left;
 }
 .accordion-content {
   padding: 15px;
   display: none;
-	 background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
-
 .accordion-content.show {
   display: block;
+}
+.accordion-button:hover {
+    background-color: #14689c;
+	color: #fff;
+}
+.accordion-button:active {
+    transform: scale(0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 .gate-container {
     display: flex;
