@@ -222,29 +222,33 @@ th {
         const qOutput = document.getElementById('q-output');
         const qbarOutput = document.getElementById('qbar-output');
 
-        clkBtn.addEventListener('click', () => {
-            clk = 1 - clk; // Toggle CLK
+clkBtn.addEventListener('click', () => {
+    clk = 1 - clk; 
+    document.getElementById('clk-output').innerText = clk; 
 
-            if (clk === 1 && prevClk === 0) { // Rising edge
-                s = parseInt(sInput.value);
-                r = parseInt(rInput.value);
+    if (clk === 1 && prevClk === 0) { 
+        s = parseInt(sInput.value);
+        r = parseInt(rInput.value);
 
-                if (s === 1 && r === 0) {
-                    q = 1;
-                    qbar = 0;
-                } else if (s === 0 && r === 1) {
-                    q = 0;
-                    qbar = 1;
-                } else if (s === 1 && r === 1) {
-                    alert("Invalid input. S and R cannot be 1 at the same time.");
-                }
+        if (s === 1 && r === 0) {
+            q = 1;
+            qbar = 0;
+        } else if (s === 0 && r === 1) {
+            q = 0;
+            qbar = 1;
+        } else if (s === 1 && r === 1) {
+            alert("Invalid input. S and R cannot be 1 at the same time.");
+        } else (s === 1 && r === 1) {
+alert("Invalid input. S and R cannot be 1 at the same time.");
+}
 
-                qOutput.innerText = q;
-                qbarOutput.innerText = qbar;
-            }
 
-            prevClk = clk;
-        });
+        qOutput.innerText = q;
+        qbarOutput.innerText = qbar;
+    }
+
+    prevClk = clk;
+});
     </script>
 </body>
 </html>
