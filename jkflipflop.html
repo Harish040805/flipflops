@@ -205,12 +205,20 @@ clkBtn.addEventListener('click', () => {
     clk = 1 - clk; 
     clkOutput.innerText = clk;
 
+    if (clk === 1) {
+        clkBtn.style.background = '#4CAF50'; 
+    } else {
+        clkBtn.style.background = '#6bbbed'; 
+    }
+
     if (clk === 1 && prevClk === 0) { 
         j = parseInt(jInput.value);
         k = parseInt(kInput.value);
 
-        if (j === 0 && k === 0) {
-        
+        if (isNaN(j) || isNaN(k)) {
+            alert("Invalid input. Please enter 0 or 1.");
+        } else if (j === 0 && k === 0) {
+            // No change
         } else if (j === 0 && k === 1) { 
             q = 0;
             qbar = 1;
@@ -220,11 +228,10 @@ clkBtn.addEventListener('click', () => {
         } else if (j === 1 && k === 1) { 
             q = 1 - q;
             qbar = 1 - q;
-        }
-} else {
+        } else {
             alert("Invalid input. Please enter 0 or 1.");
         }
-    }
+
         qOutput.innerText = q;
         qbarOutput.innerText = qbar;
     }
