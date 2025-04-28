@@ -221,7 +221,10 @@ clkBtn.addEventListener('click', () => {
             q = 1 - q;
             qbar = 1 - q;
         }
-
+} else {
+            alert("Invalid input. Please enter 0 or 1.");
+        }
+    }
         qOutput.innerText = q;
         qbarOutput.innerText = qbar;
     }
