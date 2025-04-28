@@ -178,17 +178,15 @@ th {
         const resetBtn = document.getElementById('reset-btn');
 
         clkBtn.addEventListener('click', () => {
-            clk = 1 - clk; // Toggle CLK
+            clk = 1 - clk;
             clkOutput.innerText = clk;
 
-            if (clk === 1 && prevClk === 0) { // Rising edge
+            if (clk === 1 && prevClk === 0) { 
                 t = parseInt(tInput.value);
                 if (t === 0) {
-                    // No change
                     qbarOutput.innerText = qbar;
                     qOutput.innerText = q;
                 } else if (t === 1) {
-                    // Toggle
                     q = 1 - q;
                     qbar = 1 - qbar;
                     qbarOutput.innerText = qbar;
