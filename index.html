@@ -80,7 +80,7 @@ h3{
 }
 .notification {
   position: fixed;
-  top: 20%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
@@ -140,6 +140,7 @@ h3{
 	  	* At once you click the clock button, the output result will be displayed. <br>
 	  	* Ensure the output with the table given below. <br>
 	  	* To reset all the inputs, click the reset button (small, red color circle-shaped button placed on the body of the flipflop). <br>
+	  	* Giving no inputs and non-binary inputs throws an error in all flipflops <br>
 	  	* This rule is common for all the flipflops. <br>
 	  <b>RULES FOR LOGIC GATES</b>
 	  <br>
@@ -148,6 +149,7 @@ h3{
 	  	* The result will be shown dynamically near the logic gate. <br>
 	  	* Even if no checkboxes are selected some negative logic gates (NOT gate, NAND gate) show the output as 1 based on the digital logic. <br>
 	  	* Click on the blue tabs or the checkbox(s) once to simulate or select and twice to deselect. <br>
+	  	* Giving no inputs are allowed in logic gates. <br>
 	  <b>GENERAL RULES</b>
 	  <br>
 	  	* Simulation, logic diagram and truth table is given for all the digital circuit simulations for user reference. <br>
@@ -194,7 +196,7 @@ buttons.forEach(button => {
     <br><br><br><br>
     <script>
 window.onload = function() {
-    alert("Giving no inputs and non-binary inputs throws an error in all flipflops");
+    alert("Kindly read all the instructions carefully before using this site");
 };
 
 const buttons = document.querySelectorAll('.btn');
