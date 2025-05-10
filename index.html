@@ -78,9 +78,41 @@ h3{
     margin: 20px auto;
     border-radius: 50%; 
 }
+	    .notification-title {
+  font-weight: bold;
+  font-size: 15.5px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #000;
+}
+.notification-message {
+  font-size: 13.5px;
+  margin-bottom: 20px;
+}
+.notification-close {
+  background-color: #7a288a;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.notification-close:hover {
+  background-color: #8b3ab8;
+}
 	</style>
 </head>
 <body>
+	<div id="notification" class="notification">
+  <div class="notification-title">Notification</div>
+  <div class="notification-message">
+  <br>
+		* To use edges, first create at least two vertices <br>
+		* Click the Edge Button to start creating edges <br>
+		* For weighted graph analysis, ensure that you have created the complete graph diagram before clicking the Weight button to input edge weights.<br>
+  </div>
+  <button class="notification-close">OK</button>
+</div>
     <div class="container">
         <h1>= FlipFlops =</h1>
 		<img src="https://c8.alamy.com/comp/TBGEEE/automotive-pcb-circuit-board-in-the-cartoon-TBGEEE.jpg" alt="Circuit" class="DPSD-image">
