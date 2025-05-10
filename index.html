@@ -81,12 +81,14 @@ h3{
 .notification {
   position: fixed;
   top: 50%;
-left: 20%;
+  left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
   border: 1px solid #bbb;
   padding: 20px;
-  width: 1500px;
+  width: 80%; /* changed to 80% to make it more responsive */
+  max-width: 800px; /* added max-width to limit the width */
+  box-sizing: border-box; /* added box-sizing to include padding in width */
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: none;
 }
