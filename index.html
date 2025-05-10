@@ -114,43 +114,16 @@ h3{
   <button class="notification-close">OK</button>
 </div>
 	<script>
-.notification {
-  position: fixed;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #ddd;
-  border: 1px solid #ccc;
-  padding: 20px;
-  width: 600px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  animation: fade-in 1s forwards;
-  display: none;
-}
+const notification = document.getElementById('notification');
+notification.style.display = 'block';
 
-.notification.hide {
-  animation: fade-out 1s forwards;
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
+const closeButton = document.querySelector('.notification-close');
+closeButton.addEventListener('click', () => {
+  notification.classList.add('hide');
+  setTimeout(() => {
+    notification.style.display = 'none';
+  }, 1000);
+});
 </script>
     <div class="container">
         <h1>= FlipFlops =</h1>
