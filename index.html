@@ -78,7 +78,7 @@ h3{
     margin: 20px auto;
     border-radius: 50%; 
 }
-	    .notification {
+.notification {
   position: fixed;
   top: 20%;
   left: 50%;
@@ -88,9 +88,21 @@ h3{
   padding: 20px;
   width: 410px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  animation: fade-in 0.3s forwards;
   display: none;
+}
+
+.notification.show {
+  display: block;
+  animation: fade-in 0.3s forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 	    .notification-title {
   font-weight: bold;
@@ -121,27 +133,49 @@ h3{
   <div class="notification-title">Notification</div>
   <div class="notification-message">
   <br>
-		* To use edges, first create at least two vertices <br>
-		* Click the Edge Button to start creating edges <br>
-		* For weighted graph analysis, ensure that you have created the complete graph diagram before clicking the Weight button to input edge weights.<br>
+	  <h1>RULES FOR FLIPFLOPS</h1>
+	  <br>
+		* To use the flipflop, first give the input number (strictly 0 or 1 only) in the input box near the "Set" text in the flipflop. <br>
+	  	* After giving the input, click the clock button (CLK) which is either blue or green in color near the flipflop. <br>
+	  	* At once you click the clock button, the output result will be displayed. <br>
+	  	* Ensure the output with the table given below. <br>
+	  	* To reset all the inputs, click the reset button (small, red color circle-shaped button placed on the body of the flipflop). <br>
+	  	* This rule is common for all the flipflops. <br>
+	  <h1>RULES FOR LOGIC GATES</h1>
+	  <br>
+	  	* Click on any of the listed blue tabs of the desired logic gate you want to simulate. <br>
+	  	* Click on the checkboxes placed on the body of the logic gates (either one of the two checkboxes or both). <br>
+	  	* The result will be shown dynamically near the logic gate. <br>
+	  	* Even if no checkboxes are selected some negative logic gates (NOT gate, NAND gate) show the output as 1 based on the digital logic. <br>
+	  	* Click on the blue tabs or the checkbox(s) once to simulate or select and twice to deselect. <br>
+	  <h1>GENERAL RULES</h1>
+	  <br>
+	  	* Simulation, logic diagram and truth table is given for all the digital circuit simulations for user reference. <br>
+	  	* There is no separate back button for this website. Use browser buttons or functions for navigation. <br>
+	  	* In the presence of any notification boxes or alert messages, read the message and kindly click "OK" button to pass them. <br>
+	  	* Please read all the instructions for efficient usage of this website <br>
   </div>
   <button class="notification-close">OK</button>
 </div>
-	<script>
+<script>
 window.onload = function() {
-  const notification = document.getElementById('notification');
-  notification.style.display = 'block';
-  setTimeout(() => {
-    notification.style.opacity = 1;
-  }, 100);
+    document.getElementById('notification').classList.add('show');
+    document.querySelector('.notification-close').addEventListener('click', function() {
+        document.getElementById('notification').classList.remove('show');
+    });
+    alert("Giving no inputs and non-binary inputs throws an error in all flipflops");
 };
 
-document.querySelector('.notification-close').addEventListener('click', function() {
-  const notification = document.getElementById('notification');
-  notification.style.opacity = 0;
-  setTimeout(() => {
-    notification.style.display = 'none';
-  }, 300);
+const buttons = document.querySelectorAll('.btn');
+
+buttons.forEach(button => {
+    button.addEventListener('mouseover', () => {
+        button.style.transform = 'scale(1.1)';
+    });
+
+    button.addEventListener('mouseout', () => {
+        button.style.transform = 'scale(1)';
+    });
 });
 </script>
     <div class="container">
