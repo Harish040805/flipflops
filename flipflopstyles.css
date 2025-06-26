@@ -1,6 +1,5 @@
 body {
     font-family: Arial, sans-serif;
-     background-image: linear-gradient(to bottom, #87CEFA, #FFC0CB);
 	background-image: linear-gradient(to bottom, blue, pink);
     background-size: cover;
     background-position: center;
