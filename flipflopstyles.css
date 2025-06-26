@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHlzjpKhso3UK6JmTtspbOTieRAmu1ioiw1w&s');
+	background-image: linear-gradient(to right, blue, pink);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    text-align: center;
+    margin-top: 7vh;
+    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+    padding: 50px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+h1,h3 {
+    color: #ffffff;
+    text-shadow: 2px 2px 5px #000000;
+    margin-bottom: 20px;
+}
+h1{
+    font-size: 38px;
+}
+h3{
+    font-size: 30px;
+}
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.btn {
+    text-decoration: none;
+    color: #fff;
+    background-color: #0f7cbf;
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.btn:hover {
+    background-color: #14689c;
+}
+.btn:active {
+    transform: scale(0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 760px) {
+    .container {
+        margin-top: 20vh;
+        padding: 15px 0;
+    }
+    .button-container {
+        flex-direction: column;
+    }
+    .btn {
+        margin-bottom: 15px;
+    }
+}
+.DPSD-image {
+    width: 300px;
+    height: 200px;
+    margin: 20px auto;
+    border-radius: 50%; 
+}
+.notification {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #bbb;
+  padding: 20px;
+  width: 80%; /* changed to 80% to make it more responsive */
+  max-width: 800px; /* added max-width to limit the width */
+  box-sizing: border-box; /* added box-sizing to include padding in width */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+.notification.show {
+  display: block;
+  animation: fade-in 0.3s forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+	    .notification-title {
+  font-weight: bold;
+  font-size: 15.5px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #000;
+}
+.notification-message {
+  font-size: 13.5px;
+  margin-bottom: 20px;
+}
+.notification-close {
+  background-color: #7a288a;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.notification-close:hover {
+  background-color: #8b3ab8;
+}
