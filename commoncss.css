@@ -22,7 +22,7 @@ justify-content: center;
     .button-container {
         flex-direction: column;
     }
-    .btn {
+    .btn, .main-button {
         margin-bottom: 15px;
     }
 }
